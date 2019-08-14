@@ -8,6 +8,8 @@ Notebook
 
 - Data  
 [Labor Force and Unemployment Rates, Local Area Unemployment Statistics](https://data.edd.ca.gov/Labor-Force-and-Unemployment-Rates/Local-Area-Unemployment-Statistics-LAUS-/e6gw-gvii)  
-Notebook  
-[Local Area Unemployment Statistics](https://github.com/rblcoder/Analyzing-open-data-edd-ca/blob/master/Local%20Area%20Unemployment%20Statistics.ipynb)  
+Notebooks  
+[Local Area Unemployment Statistics Analysis Part 1](https://github.com/rblcoder/Analyzing-open-data-edd-ca/blob/master/Local%20Area%20Unemployment%20Statistics%20Analysis%20Part%201.ipynb)  
+[Local Area Unemployment Statistics Analysis Part 2](https://github.com/rblcoder/Analyzing-open-data-edd-ca/blob/master/Local%20Area%20Unemployment%20Statistics%20Analysis%20Part%202.ipynb)  
+[Local Area Unemployment Statistics Analysis Part 3](https://github.com/rblcoder/Analyzing-open-data-edd-ca/blob/master/Local%20Area%20Unemployment%20Statistics%20Analysis%20Part%203.ipynb)  
 
