@@ -2,15 +2,23 @@ import numpy as np
 import pandas as pd
 from IPython.display import display, clear_output
 import ipywidgets as widgets
-
+        
+        
 class Eda:
     
     def __init__(self, df=None):
+        #https://stackoverflow.com/questions/11707586/how-do-i-expand-the-output-display-to-see-more-columns
+        #pd.set_option('display.expand_frame_repr', False)
+        #pd.set_option('display.max_rows', 50)
+        #pd.set_option('display.max_columns', 50)
+        pd.set_option('display.width', 0)
         if df is not None:
             self.df = df
 
     def load_data(self, csv_file_path_name: str):
-        df = pd.read_csv(csv_file_path_name)
+        #head_csv = !head -n3 "{csv_file_path_name}"
+        #print(head_csv)
+        df = pd.read_csv(csv_file_path_name, parse_dates=True, infer_datetime_format=True)
         df.columns = [col_name.lower().strip() for col_name in df.columns]
         self.df = df
         
