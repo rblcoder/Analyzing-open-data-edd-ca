@@ -2,9 +2,9 @@ import numpy as np
 import pandas as pd
 from IPython.display import display, clear_output
 import ipywidgets as widgets
+
         
-        
-class Eda:
+class Eda(object):
     
     def __init__(self, df=None):
         #https://stackoverflow.com/questions/11707586/how-do-i-expand-the-output-display-to-see-more-columns
@@ -18,9 +18,9 @@ class Eda:
     def load_data(self, csv_file_path_name: str):
         #head_csv = !head -n3 "{csv_file_path_name}"
         #print(head_csv)
-        df = pd.read_csv(csv_file_path_name, parse_dates=True, infer_datetime_format=True)
-        df.columns = [col_name.lower().strip() for col_name in df.columns]
-        self.df = df
+        self.df = pd.read_csv(csv_file_path_name, parse_dates=True, infer_datetime_format=True)
+        #df.columns = [col_name.lower().strip() for col_name in df.columns]
+        self.rename_columns(columns=[col_name.lower().strip() for col_name in self.df.columns])
         
     def view_data_details(self):
         #df = pd.read_csv(csv_file_path_name)
@@ -73,3 +73,14 @@ class Eda:
         print("Cardinality of data")
         for col in self.df.columns:
             print(f"{col} : {self.df[col].nunique()}")
+            
+    def rename_columns(self, columns, inplace=True):
+        def rename_cols_local(df: pd.DataFrame, columns_dict:dict):
+            self.df.rename(columns=columns_dict, inplace=inplace)
+             
+        if isinstance(columns, list):
+            # self.df.rename(columns=dict(zip(self.df.columns, columns)), inplace=inplace)
+            rename_cols_local(self.df, columns_dict=dict(zip(self.df.columns, columns)))
+        elif isinstance(columns, dict):
+            rename_cols_local(self.df, columns_dict=columns)
+            #self.df.rename(columns=columns, inplace=inplace)
